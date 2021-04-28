@@ -18,15 +18,40 @@
       src="https://cdn.jsdelivr.net/npm/@mediapipe/face_detection/face_detection.js"
       crossorigin="anonymous"
     ></script>
+
+    <style>
+      body {
+        background: black;
+        color: #cccccc;
+      }
+      div {
+        float: left;
+        border: 1px solid #444444;
+        padding: 10px;
+        margin: 10px;
+        background: #3b3b3b;
+      }
+    </style>
   </head>
 
   <body>
-    <div class="container">
-      <video class="input_video"></video>
-      <canvas class="output_canvas" width="1280px" height="720px"></canvas>
+    <div>
+      <video
+        id="video"
+        src="input/video.mp4"
+        controls="true"
+        width="1280"
+        crossorigin="anonymous"
+      ></video>
     </div>
+    <div>
+      <canvas id="c2" width="1280" height="720"></canvas>
+    </div>
+    <script type="text/javascript" src="processor.js"></script>
   </body>
-  <script type="module">
+
+  <!-- WASM module -->
+  <!-- <script type="module">
     const videoElement = document.getElementsByClassName("input_video")[0];
     const canvasElement = document.getElementsByClassName("output_canvas")[0];
     const canvasCtx = canvasElement.getContext("2d");
@@ -44,7 +69,6 @@
       );
 
       if (results.detections.length > 0) {
-        debugger;
         canvasCtx.filter = "blur(4px)";
         results.detections[0].boundingBox.height =
           results.detections[0].boundingBox.height + 0.03;
@@ -53,6 +77,8 @@
         drawRectangle(canvasCtx, results.detections[0].boundingBox, {
           fillColor: "#c8c8c8",
         });
+
+        // draw landmarks
         // drawLandmarks(canvasCtx, results.detections[0].landmarks, {
         //   color: "red",
         //   radius: 5,
@@ -79,5 +105,5 @@
       height: 720,
     });
     camera.start();
-  </script>
+  </script> -->
 </html>

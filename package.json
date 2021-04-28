@@ -1,0 +1,12 @@
+{
+  "name": "mediapipe-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "start:old": "parcel old.index.html"
+  },
+  "repository": "git@github.com:EdgeTechStudio/face-anonymizer-js.git",
+  "author": "whimzyLive <rp970.patel@gmail.com>",
+  "license": "MIT"
+}
